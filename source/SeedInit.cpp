@@ -98,24 +98,24 @@ int CommandLineParameter(char **argv, int pos)
 	const char *param = argv[pos];
 	int consume = 1;
 
-	if (!StringUtil::Equals(param, "--no-sound"))
+	if (StringUtil::Equals(param, "--no-sound"))
 	{
 		Private::bDisableSound = true;
 	}
-	else if (!StringUtil::Equals(param, "--no-thread"))
+	else if (StringUtil::Equals(param, "--no-thread"))
 	{
 		Private::bDisableThread = true;
 	}
-	else if (!StringUtil::Equals(param, "--no-resourceloader"))
+	else if (StringUtil::Equals(param, "--no-resourceloader"))
 	{
 		Private::bDisableResourceLoader = true;
 	}
-	else if (!StringUtil::Equals(param, "--config"))
+	else if (StringUtil::Equals(param, "--config"))
 	{
 		Private::sConfigFile = argv[pos + 1];
 		consume++;
 	}
-	else if (!StringUtil::Equals(param, "--workdir"))
+	else if (StringUtil::Equals(param, "--workdir"))
 	{
 		Private::sWorkDir = argv[pos + 1];
 		consume++;
